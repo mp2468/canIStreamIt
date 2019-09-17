@@ -8,7 +8,10 @@
     <body>
             <a href="/about/">About Me</a>
         <h1>Put in each show you'd like to watch...</h1>
-        <input placeholder="show title">
-        <button>Click me to submit the show title</button>
+        <form method="POST" action="/show_add/">
+                {% csrf_token %}
+            <p>Show Name: <input type="text" name="showname"></p>
+            <p><input type="submit" value="submit"></p>
+        </form>
     </body>
 </html>

@@ -18,19 +18,19 @@ class HomePageView(TemplateView):
         # Add this view
 class AboutPageView(TemplateView):
     template_name = "about.html"
-    def view_name(request, second):
+    def page(request, second):
         if request.method == "POST":
             print("yoyooyoyoo")
             print(request)
             screenname = request.POST.get("handle", None)  # handle is the name of the input in the question.
             # Here you can do anything with your screenname, like passing it to the function.
-            return render(request, 'index.html', context=None)
+            return render(request, 'about.html', context=None)
 
-class ShowAddView(TemplateView):
-    def view_name(request, second):
-        if request.method == "POST":
-            print("yoyooyoyoo")
-            print(request)
-            screenname = request.POST.get("handle", None)  # handle is the name of the input in the question.
-            # Here you can do anything with your screenname, like passing it to the function.
-            return render(request, 'index.html', context=None)
+# class ShowAddView(TemplateView):
+#     def post(request, second):
+#         if request.method == "POST":
+#             print("yoyooyoyoo")
+#             print(request)
+#             screenname = request.POST.get("handle", None)  # handle is the name of the input in the question.
+#             # Here you can do anything with your screenname, like passing it to the function.
+#             return render(request, 'index.html', context=None)
